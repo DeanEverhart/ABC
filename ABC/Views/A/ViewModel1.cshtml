@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ABC.Models.View.Model1>
+
+@{
+    ViewData["ViewModel1"] = "ViewModel1";
+}
+
+<h1>ViewModel1</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Property Set A, Property @Html.DisplayNameFor(model => model.A.One)
+            </th>
+            <th>
+                Property Set B, Property @Html.DisplayNameFor(model => model.B.One)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.A.One)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.B.One)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.A.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.A.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.A.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

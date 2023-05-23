@@ -1,0 +1,44 @@
+﻿@model ABC.Models.A
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>A</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="One" class="control-label"></label>
+                <input asp-for="One" class="form-control" />
+                <span asp-validation-for="One" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Two" class="control-label"></label>
+                <input asp-for="Two" class="form-control" />
+                <span asp-validation-for="Two" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Three" class="control-label"></label>
+                <input asp-for="Three" class="form-control" />
+                <span asp-validation-for="Three" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

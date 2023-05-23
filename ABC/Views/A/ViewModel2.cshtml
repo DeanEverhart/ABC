@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ABC.Models.View.Model2>
+
+@{
+    ViewData["ViewModel2"] = "ViewModel2";
+}
+
+<h1>ViewModel2</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               One
+            </th>
+            <th>
+                Two
+            </th>
+            <th>
+                Three
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.One)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Two)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Three)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
